@@ -16,34 +16,35 @@ Phase 1
         - Set Channel Config Icon
         - Set Channel Config Source
 
-        Set Channel Preamp trim
-        Set Channel Preamp invert
+        - Set Channel Preamp trim
+        - Set Channel Preamp invert
         
-        Set Channel Insert on/off
-        Set Channel Insert position
-        Set Channel Insert selection
+        - Set Channel Insert on/off
+        - Set Channel Insert position
+        - Set Channel Insert selection
 
-        Set Channel EQ on/off
-        Set Channel EQ type
-        Set Channel EQ freq
-        Set Channel EQ gain
-        Set Channel EQ quality
+        - Set Channel EQ on/off
+        - Set Channel EQ type
+        - Set Channel EQ freq
+        - Set Channel EQ gain
+        - Set Channel EQ quality
 
-        Set Matrix Config Name
-        Set Matrix Config Color
-        Set Matrix Config Icon
-        Set matrix Mix on/off
-        Set Matrix Mix fader
+        - Set Matrix Config Name
+        - Set Matrix Config Color
+        - Set Matrix Config Icon
+        - Set matrix Mix on/off
+        - Set Matrix Mix fader
 
-        Set DCA Config Name
-        Set DCA Config Color
-        Set DCA Config Icon
-        Set DCA on/off
-        Set DCA fader
+        - Set DCA Config Name
+        - Set DCA Config Color
+        - Set DCA Config Icon
+        - Set DCA on/off
+        - Set DCA fader
 
 Phase 2
 
     Add More Commands
+        TODO - add a list of commands here
 
     Add Bi-Directional OSC data.
         - read data, make modifications, write back to console. 
