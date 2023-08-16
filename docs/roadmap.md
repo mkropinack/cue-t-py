@@ -46,7 +46,10 @@ Phase 2
     Add More Commands
 
     Add Bi-Directional OSC data.
-        - read data, make modifications, write back to console. For example - DCA groups are assigned as an 8-bit bitmap.  To add/remove an assignment to a single DCA without affecting the others, it is necessary to read the bitmap for the channel, make the change and re-write it back to the console.
+        - read data, make modifications, write back to console. 
+        For example - DCA groups are assigned as an 8-bit bitmap.  To add/remove an assignment to a 
+        single DCA without affecting the others, it is necessary to read the bitmap for the channel, 
+        make the change and re-write it back to the console.
         - Accept pot and fader position from console to update the application display.
         - Accept meter data
         
