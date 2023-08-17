@@ -11,10 +11,10 @@ Phase 1
         * Set Channel on/off
         * Set Channel fader
         * Set Channel DCA groups  (using DCA spill on desks and in M32edit to bring important controls into view)
-        - Set Channel Config Name
-        - Set Channel Config Color
-        - Set Channel Config Icon
-        - Set Channel Config Source
+        * Set Channel Config Name
+        * Set Channel Config Color
+        * Set Channel Config Icon
+        * Set Channel Config Source
 
         - Set Channel Preamp trim
         - Set Channel Preamp invert

@@ -22,9 +22,13 @@ class OSC_M32():
             case "channel_config_name": result = self.setChannelConfigName( param )
             case "channel_config_color": result = self.setChannelConfigColor( param )
             case "channel_config_icon": result = self.setChannelConfigIcon( param )
+            case "channel_config_source": result = self.setChannelConfigSource( param )
             case "channel_group_dca": result = self.setChannelGroupDCA( param )
             case "channel_on_off": result = self.setChannelOnOff( param )
             case "channel_fader": result = self.setChannelFader( param )
+            case "matrix_config_name": result = self.setMatrixConfigName( param )
+            case "matrix_config_icon": result = self.setMatrixConfigIcon( param )
+            case "matrix_config_color": result = self.setMatrixConfigColor( param )
             case _: result = "Invalid Parameter [{}]".format( param["param"] )
         return result
     
@@ -32,16 +36,21 @@ class OSC_M32():
         channel_number = param["index"]
         channel_name = param["value"]
         self.OSCclient.send_message("/ch/{}/config/name".format(channel_number), channel_name)
+    
+    def setChannelConfigIcon( self, param ):
+        channel_number = param["index"]
+        channel_icon = param["value"]
+        self.OSCclient.send_message("/ch/{}/config/icon".format(channel_number), channel_icon)
 
     def setChannelConfigColor( self, param ):
         channel_number = param["index"]
         channel_color = param["value"]
         self.OSCclient.send_message("/ch/{}/config/color".format(channel_number), channel_color)
-    
-    def setChannelConfigColor( self, param ):
+
+    def setChannelConfigSource( self, param ):
         channel_number = param["index"]
-        channel_icon = param["value"]
-        self.OSCclient.send_message("/ch/{}/config/icon".format(channel_number), channel_icon)
+        channel_source = param["value"]
+        self.OSCclient.send_message("/ch/{}/config/source".format(channel_number), channel_source)
 
     def setChannelOnOff( self, param):
         channel = param["index"]
@@ -63,3 +72,18 @@ class OSC_M32():
         dca_groups = param["value"]
         print("setChannelGroupDCA [{} - {}]".format( channel, dca_groups ))
         self.OSCclient.send_message("/ch/{}/grp/dca".format(channel) , dca_groups)
+
+    def setMatrixConfigName( self, param ):
+        matrix_number = param["index"]
+        matrix_name = param["value"]
+        self.OSCclient.send_message("/mtx/{}/config/name".format(matrix_number), matrix_name)
+
+    def setMatrixConfigIcon( self, param ):
+        matrix_number = param["index"]
+        matrix_icon = param["value"]
+        self.OSCclient.send_message("/mtx/{}/config/icon".format(matrix_number), matrix_icon)
+
+    def setMatrixConfigColor( self, param ):
+        matrix_number = param["index"]
+        matrix_color = param["value"]
+        self.OSCclient.send_message("/mtx/{}/config/color".format(matrix_number), matrix_color)
