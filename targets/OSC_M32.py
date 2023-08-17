@@ -10,24 +10,39 @@ class OSC_M32():
         self.data = configVal
         self.OSCclient = udp_client.SimpleUDPClient(configVal["ip"], int(configVal["port"]))
 
+
+    # setParam - setParam issues individual configuration and parameter changes to the Audio console.
+    # These commands are not conditional, and are issued regardless of the state of the console.
+    # No information is returned from the console, and the previous state of the parameter is not saved.
+    # These are intended to be used as building blocks for more complicated cues.
+
     def setParam( self, param):
         result = ""
         match param["param"]:
-            #case "channel_set_config_name": result = self.channelSetConfigName( param )
-            #case "channel_set_config_color": result = self.channelSetConfigColor( param )
+            case "channel_config_name": result = self.setChannelConfigName( param )
+            case "channel_config_color": result = self.setChannelConfigColor( param )
+            case "channel_config_icon": result = self.setChannelConfigIcon( param )
             case "channel_group_dca": result = self.setChannelGroupDCA( param )
             case "channel_on_off": result = self.setChannelOnOff( param )
             case "channel_fader": result = self.setChannelFader( param )
             case _: result = "Invalid Parameter [{}]".format( param["param"] )
         return result
     
-#    def setChannelName( self, action):
-#        # TODO - set channel name.
-#        pass
+    def setChannelConfigName( self, param ):
+        channel_number = param["index"]
+        channel_name = param["value"]
+        self.OSCclient.send_message("/ch/{}/config/name".format(channel_number), channel_name)
 
-#    def setChannelColor( self, action ):
-#        pass
+    def setChannelConfigColor( self, param ):
+        channel_number = param["index"]
+        channel_color = param["value"]
+        self.OSCclient.send_message("/ch/{}/config/color".format(channel_number), channel_color)
     
+    def setChannelConfigColor( self, param ):
+        channel_number = param["index"]
+        channel_icon = param["value"]
+        self.OSCclient.send_message("/ch/{}/config/icon".format(channel_number), channel_icon)
+
     def setChannelOnOff( self, param):
         channel = param["index"]
         on_off_state = param["value"]

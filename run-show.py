@@ -20,7 +20,7 @@ currentCue.set('Cue Playing:')
 def fire_cue(cueNumber):
     print("Firing Cue Number {}".format(cueNumber))
     for target in cueInfo["cues"][cueNumber]["targets"]:
-        for param in cueInfo["cues"][cueNumber]["targets"][target]["params"]:
+        for param in cueInfo["cues"][cueNumber]["targets"][target]["setparams"]:
             print("param: {}".format(param))
             targets[target].setParam(param)
 
