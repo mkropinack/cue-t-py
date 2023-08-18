@@ -54,7 +54,9 @@ def loadConfigFiles():
 def configureTargets():
     global targets
     targets=dict()
-    targets['AudioConsole01'] = OSC_M32.OSC_M32(targetInfo['AudioConsole01'])
+    # TODO = This needs to be set-up programatically from the values in the targets.cfg file
+    for target in targetInfo:
+        targets[target] = get_target(targetInfo[target])
     return True
 
 if __name__ == "__main__":
@@ -68,11 +70,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     # Load Configuration Files
-#    try:
-    assert loadConfigFiles() == True
-#    except:
-#        print("Something went wrong when loading the configuration.  Quitting!")
-#        quit()
+    try:
+         assert loadConfigFiles() == True
+    except:
+        print("Something went wrong when loading the configuration.  Quitting!")
+        quit()
 
     #print( yaml.safe_dump( targetInfo ) )
 

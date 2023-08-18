@@ -29,15 +29,15 @@ Phase 1
         - Set Channel EQ gain
         - Set Channel EQ quality
 
-        - Set Matrix Config Name
-        - Set Matrix Config Color
-        - Set Matrix Config Icon
+        * Set Matrix Config Name
+        * Set Matrix Config Color
+        * Set Matrix Config Icon
         - Set matrix Mix on/off
         - Set Matrix Mix fader
 
-        - Set DCA Config Name
-        - Set DCA Config Color
-        - Set DCA Config Icon
+        * Set DCA Config Name
+        * Set DCA Config Color
+        * Set DCA Config Icon
         - Set DCA on/off
         - Set DCA fader
 
